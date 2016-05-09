@@ -1,19 +1,20 @@
 <?php
 
 global $xhprof;
+$cookieXhprof = 'A9v3XUsnKX3aEiNsUDZzV';
 
-if (!isset($_REQUEST['A9v3XUsnKX3aEiNsUDZzV']) && !isset($_COOKIE['A9v3XUsnKX3aEiNsUDZzV'])) {
+if (!isset($_REQUEST[$cookieXhprof]) && !isset($_COOKIE[$cookieXhprof])) {
   $xhprof = false;
 } else {
   // Remove trace of the special variable from REQUEST_URI
-  $_SERVER['REQUEST_URI'] = str_replace(array('?A9v3XUsnKX3aEiNsUDZzV', '&A9v3XUsnKX3aEiNsUDZzV'), '', $_SERVER['REQUEST_URI']);
+  $_SERVER['REQUEST_URI'] = str_replace(array('?' . $cookieXhprof, '&' . $cookieXhprof), '', $_SERVER['REQUEST_URI']);
 
-  setcookie('A9v3XUsnKX3aEiNsUDZzV', 1);
+  setcookie($cookieXhprof, 1);
   $xhprof = true;
 }
 
-if (isset($_REQUEST['no-A9v3XUsnKX3aEiNsUDZzV'])) {
-  setcookie('A9v3XUsnKX3aEiNsUDZzV', 0, time() - 86400);
+if (isset($_REQUEST['no-' . $cookieXhprof])) {
+  setcookie($cookieXhprof, 0, time() - 86400);
   $xhprof = false;
 }
 
