@@ -7,6 +7,6 @@ if ($xhprof && extension_loaded('xhprof')) {
     $run_id = $xhprof_runs->save_run($xhprof_data, $profiler_namespace);
 
     // url to the XHProf UI libraries (change the host name and path)
-    $profiler_url = sprintf('http://localhost/xhprof/xhprof_html/index.php?run=%s&amp;source=%s', $run_id, $profiler_namespace);
+    $profiler_url = sprintf('http://' . $_SERVER['SERVER_NAME'] . '/xhprof/xhprof_html/index.php?run=%s&amp;source=%s', $run_id, $profiler_namespace);
     echo '<a href="'. $profiler_url .'" target="_blank">Profiler output</a>';
 }
