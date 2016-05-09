@@ -2,10 +2,24 @@
     "name": "thenguyenit/xhprof",
     "version": "1.0",
     "repositories": [
-        {
-            "type": "git",
-            "url":  "git://github.com:thenguyenit/xhprof.git",
-            "reference": "master"
+    {
+        "type": "package",
+        "package": {
+            "name": "thenguyenit/xhprof",
+            "version": "master",
+            "source": {
+                "url": "git://github.com/thenguyenit/xhprof.git",
+                "type": "git",
+                "reference": "master"
+            },
+            "autoload": {
+                "psr-0" : {
+                    "ThenguyenIt\\Xhprof" : "src"
+                }
+            }
         }
-    ]
+    }
+]
 }
+
+
