@@ -1,0 +1,10 @@
+{
+    "name": "thenguyenit/xhprof",
+    "version": "1.0",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:thenguyenit/xhprof.git"
+        }
+    ]
+}
